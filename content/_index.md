@@ -77,7 +77,8 @@ sections:
         folders:
           - events
     design:
-      view: card
+      view: article-grid
+      columns: 2
   - block: collection
     id: news
     content:
@@ -103,7 +104,8 @@ sections:
       order: desc
     design:
       # Choose a layout view
-      view: card
+      view: article-grid
+      columns: 2
       # Reduce spacing
       spacing:
         padding: [0, 0, 0, 0]

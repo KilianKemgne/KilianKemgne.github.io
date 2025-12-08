@@ -16,7 +16,7 @@ status:
 role: PhD Student
 bio: |
   Kilian Kemgne is a PhD Student at IRIT, specializing in 
-  memory management and swap management. My research focuses on addressing 
+  memory and swap management. My research focuses on addressing 
   the double paging problem in runtimes, improving swap behavior, and optimizing overall system performance.
 
 affiliations:
@@ -45,12 +45,12 @@ interests:
   - Cybersecurity
 
 education:
-  - degree: PhD Computer Science
+  - degree: PhD Student in Computer Science
     institution: Toulouse University
     start: 2025-09-01
     end: 2028-08-31
     summary: |
-      Thesis on memory improvement by avoiding double paging anomaly in runtime
+      Thesis on memory improvement by avoiding double paging anomaly in runtimes
     button:
       text: Download dissertation
       url: /resume.pdf
@@ -59,27 +59,43 @@ education:
     institution: National Advanced School of Engineering of Yaounde
     start: 2019-09-01
     end: 2025-09-17
-  - degree: BS Computer Science
-    institution: MIT
-    start: 2009-09-01
-    end: 2013-05-31
+  - degree: Scientific Baccalaureate
+    institution: Classical High School of Bafoussam
+    start: 2018-09-01
+    end: 2019-05-31
 
 experience:
-  - role: Senior AI Research Scientist
-    org: Meta AI
-    start: 2020-01-01
+  # - role: Research Engineer 
+  #   org: IRIT
+  #   start: 2024-11-01
+  #   summary: |
+  #     Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
+  #   button:
+  #     text: View portfolio
+  #     url: /
+  #     icon: hero/arrow-down-tray
+  - role: Research Engineer 
+    org: IRIT
+    start: 2024-11-01
+    end: 2025-08-31
     summary: |
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models.
+      Worked on demonstrating the double paging problem in runtimes by evaluating its impact on application latency, CPU usage, and the multiple disk I/O operations it generates.
+  - role: Kernel Developper Research Intern 
+    org: LIG
+    start: 2024-03-01
+    end: 2024-08-02
+    summary: |
+      Worked on integrating NUMA-awareness into a user-space memory management system, and contributed to the integration of a Machine Learning solution aimed at improving the swap process.
+  - role: Kernel Developper Research Intern 
+    org: ENSPY
+    start: 2023-07-01
+    end: 2023-09-02
+    summary: |
+      Wworked on demonstrating that a memory allocator is equivalent to a scheduler. I implemented a system for transferring interrupts received by the scheduler into user space. I also studied scheduling techniques and ghOSt (SOSP ’21), developed by Google, which enables the definition of scheduling policies in user space.
     button:
-      text: View portfolio
-      url: /
+      text: ghOSt Paper
+      url: https://storage.googleapis.com/gweb-research2023-media/pubtools/6413.pdf
       icon: hero/arrow-down-tray
-  - role: AI Research Intern
-    org: OpenAI
-    start: 2019-06-01
-    end: 2019-12-31
-    summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
 
 skills:
   - name: Technical Skills
@@ -100,16 +116,33 @@ skills:
         level: 4
 
 languages:
-  - name: English
+  - name: French
     level: 5
     label: Native
-  - name: Spanish
-    level: 4
+  - name: English
+    level: 3
     label: Fluent
 
 awards:
-  - title: Best Paper Award
-    awarder: NeurIPS
-    date: "2022-12-01"
-    summary: Awarded for groundbreaking work on efficient training of large models.
+  - title: National Data Science Hackathon
+    awarder: CAYSTI & UY1
+    date: "2023-12-01"
+    summary: Scraping PDF documents containing national education statistics in Cameroon to produce dashboards that guide and facilitate decision-making for key stakeholders in the sector.
     icon: hero/trophy
+  - title: National Machine Learning Hackathon
+    awarder: CANAM
+    date: "2023-11-01"
+    summary: Analysis of data produced by the Kickstarter crowdfunding platform and development of a deep learning model to predict projects whose fundraising campaigns have a high potential for success.
+    icon: hero/trophy
+  # - title: "Workshop : Defis OS INRIA, Rennes"
+  #   awarder: INRIA Rennes
+  #   date: "2024-04-15"
+  #   summary: A challenge during which I presented work on integrating NUMA-awareness into USM (Userspace Memory Management), implementing a memory scheduling policy in a NUMA environment, and comparing USM with FBMM (File-Based Memory Management) (HOTOS ’23).
+  #   # icon: hero/pencil-square
+  #   icon: hero/microphone
+  # - title: "GDR - RSD : Systems and Network Virtualization"
+  #   awarder: Sorbonne University
+  #   date: "2024-11-15"
+  #   summary: A day during which I presented an approach for addressing the double swap problem in virtualized environments.
+  #   # icon: hero/pencil-square
+  #   icon: hero/microphone
