@@ -1,8 +1,14 @@
 ---
-title: "An example preprint / working paper"
+title: "USM : Userspace Memory Management"
 authors:
 - me
-date: "2019-04-07T00:00:00Z"
+- Luc Mahop
+- Assane Fall
+- Yves Kone
+- Renaud Lachaize
+- Jean-Pierre Lozi
+- Alain Tchana
+date: "2024-12-09T00:00:00Z"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2017-01-01T00:00:00Z"
@@ -16,13 +22,15 @@ publication_types: ["article"]
 publication: ""
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: We introduce USM, a framework for rapid development of memory management (MM) policies in Linux. USM adopts a microkernel approach, allowing MM policies to run in userspace. We demonstrate the flexibility of USM by using it to implement various MM policies. Further, we evaluate USM’s performance, showing comparable or better results than Linux, with up to a 1.41 × improvement for Redis using a basic MM policy. Additionally, we compare USM with the tate-of-the-art FBMM policy and show that USM supports implementing research MM policies such as the PTEMagnet policy for virtual machines.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: USM is a userspace framework for rapidly developing memory-management policies in Linux. It offers kernel-like flexibility with simpler experimentation, achieving competitive performance—up to 1.41× faster than Linux on Redis—and supports advanced policies such as FBMM and PTEMagnet.
 
 tags:
-- Large Language Models
+- Memory Management
+- Policies implementation
+- USM
 
 featured: true
 
@@ -32,7 +40,7 @@ hugoblox:
 
 links:
 - type: preprint
-  provider: arxiv
+  provider: Middleware
   id: 1512.04133v1
 - type: code
   url: https://github.com/HugoBlox/hugo-blox-builder

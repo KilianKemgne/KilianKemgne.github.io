@@ -15,12 +15,13 @@ status:
   icon: "☕️"
 role: PhD Student
 bio: |
-  Kilian Kemgne is a PhD Student at IRIT, specializing in 
-  memory and swap management. My research focuses on addressing 
-  the double paging problem in runtimes, improving swap behavior, and optimizing overall system performance.
+  I am currently a Ph.D. student in Computer Science at the IRIT Laboratory of the University of Toulouse, under the supervision of 
+  [Prof. Daniel HAGIMONT](https://www.researchgate.net/profile/Daniel-Hagimont), [Prof. Alain TCHANA](https://lig-membres.imag.fr/tchanaa/index.html) and 
+  [Dr. Camelia SLIMANI](https://scholar.google.com/citations?user=gfs36YEAAAAJ&hl=en).
+  My research focuses on addressing the double paging problem in runtimes, improving swap behavior, and optimizing overall system performance.
 
 affiliations:
-  - name: IRIT
+  - name: Sepia Team, IRIT
     url: https://www.irit.fr/
 
 links:
@@ -47,6 +48,7 @@ interests:
 education:
   - degree: PhD Student in Computer Science
     institution: Toulouse University
+    logo: "logos/ut.png"
     start: 2025-09-01
     end: 2028-08-31
     summary: |
@@ -57,6 +59,7 @@ education:
       icon: hero/arrow-down-tray
   - degree: MS Computer Science
     institution: National Advanced School of Engineering of Yaounde
+    logo: "logos/enspy_no.png"
     start: 2019-09-01
     end: 2025-09-17
   - degree: Scientific Baccalaureate
@@ -76,18 +79,21 @@ experience:
   #     icon: hero/arrow-down-tray
   - role: Research Engineer 
     org: IRIT
+    logo: "logos/irit.png"
     start: 2024-11-01
     end: 2025-08-31
     summary: |
       Worked on demonstrating the double paging problem in runtimes by evaluating its impact on application latency, CPU usage, and the multiple disk I/O operations it generates.
   - role: Kernel Developper Research Intern 
     org: LIG
+    logo: "logos/lig.png"
     start: 2024-03-01
     end: 2024-08-02
     summary: |
       Worked on integrating NUMA-awareness into a user-space memory management system, and contributed to the integration of a Machine Learning solution aimed at improving the swap process.
   - role: Kernel Developper Research Intern 
     org: ENSPY
+    logo: "logos/enspy.jpg"
     start: 2023-07-01
     end: 2023-09-02
     summary: |

@@ -12,7 +12,7 @@ address:
   postcode: '35042'
   country: France
 
-summary: "USM: Physical Memory Management in Userspace for Extensibility"
+summary: "I presented my work on integrating NUMA-awareness into USM (Userspace Memory Management), the implemention of a memory scheduling policy in a NUMA environment, and the comparison between USM and FBMM (File-Based Memory Management) (HOTOS ’23)."
 abstract: 'A challenge during which I presented work on integrating NUMA-awareness into USM (Userspace Memory Management), implementing a memory scheduling policy in a NUMA environment, and comparing USM with FBMM (File-Based Memory Management) (HOTOS ’23).'
 
 # Talk start and end times.

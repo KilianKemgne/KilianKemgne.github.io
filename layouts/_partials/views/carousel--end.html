@@ -1,0 +1,122 @@
+{{ $page := .page }}
+{{ $id := printf "carousel-%s" $page.File.UniqueID }}
+
+      </div> <!-- fin .carousel-track -->
+
+      <!-- Indicateurs -->
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <div class="carousel-indicators flex items-center gap-2">
+          <!-- rempli en JS -->
+        </div>
+      </div>
+
+    </div> <!-- fin .relative -->
+  </div> <!-- fin .carousel-container -->
+</div> <!-- fin wrapper -->
+
+<script>
+(function() {
+  const root = document.getElementById('{{ $id }}');
+  if (!root) return;
+
+  const track = root.querySelector('.carousel-track');
+  const slides = Array.from(track.querySelectorAll('.carousel-item'));
+  if (!slides.length) return;
+
+  const prevBtn = root.querySelector('[data-role="prev"]');
+  const nextBtn = root.querySelector('[data-role="next"]');
+  const indicatorsContainer = root.querySelector('.carousel-indicators');
+  const progressBar = root.querySelector('.progress-bar');
+
+  let current = 0;
+  let autoTimer = null;
+  const indicators = [];
+
+  function updateView() {
+    // translateX pour déplacer toute la bande
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    // slide active pour l'effet de scale / opacity
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === current);
+    });
+
+    // indicateurs
+    indicators.forEach((indicator, index) => {
+      indicator.className =
+        'w-8 sm:w-12 h-1 sm:h-1.5 rounded-full transition-colors ' +
+        (index === current
+          ? 'bg-gray-900/70 dark:bg-white/80'
+          : 'bg-gray-400/40 dark:bg-gray-500/40 hover:bg-gray-600/60 dark:hover:bg-white/70');
+    });
+
+    // barre de progression
+    if (progressBar) {
+      progressBar.style.width = (((current + 1) / slides.length) * 100) + '%';
+    }
+  }
+
+  // Quand on clique sur un slide, on le recentre
+  slides.forEach((slide, index) => {
+    slide.style.cursor = 'pointer';
+
+    slide.addEventListener('click', (e) => {
+      // Optionnel : si on clique sur un lien à l'intérieur, on laisse le lien faire sa vie
+      if (e.target.closest('a')) return;
+
+      goTo(index);
+    });
+  });
+
+
+  function goTo(index) {
+    const len = slides.length;
+    current = ((index % len) + len) % len;
+    updateView();
+    resetAuto();
+  }
+
+  function resetAuto() {
+    if (autoTimer) window.clearInterval(autoTimer);
+    autoTimer = window.setInterval(() => goTo(current + 1), 7000);
+  }
+
+  // Création des indicateurs
+  slides.forEach((slide, index) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+    indicatorsContainer.appendChild(btn);
+    indicators.push(btn);
+    btn.addEventListener('click', () => goTo(index));
+  });
+
+  // Flèches
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  // Swipe tactile
+  let startX = 0;
+  let endX = 0;
+  const threshold = 40;
+
+  track.addEventListener('touchstart', e => {
+    if (!e.changedTouches || !e.changedTouches.length) return;
+    startX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  track.addEventListener('touchend', e => {
+    if (!e.changedTouches || !e.changedTouches.length) return;
+    endX = e.changedTouches[0].screenX;
+    const diff = startX - endX;
+    if (Math.abs(diff) > threshold) {
+      if (diff > 0) goTo(current + 1);
+      else goTo(current - 1);
+    }
+  }, { passive: true });
+
+  // Init
+  updateView();
+  resetAuto();
+})();
+</script>

@@ -58,7 +58,7 @@ sections:
         featured_only: true
     design:
       view: article-grid
-      columns: 2
+      columns: 1
   - block: collection
     content:
       title: Recent Publications
@@ -77,8 +77,8 @@ sections:
         folders:
           - events
     design:
-      view: article-grid
-      columns: 2
+      view: carousel
+      # columns: 2
   - block: collection
     id: news
     content:
