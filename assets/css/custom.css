@@ -147,3 +147,31 @@
 .progress-bar {
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.js-like-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* color: #6b7280; */
+    transition: color 0.2s ease;
+}
+
+.js-like-btn:hover {
+    color: #ef4444; /* red-500 */
+}
+
+.heart-solid {
+  transform-origin: center;
+}
+
+.heart-solid:not(.hidden) {
+  animation: heart-pop 0.18s ease-out;
+}
+
+@keyframes heart-pop {
+  0%   { transform: scale(0.7); }
+  100% { transform: scale(1); }
+}
+
+
+

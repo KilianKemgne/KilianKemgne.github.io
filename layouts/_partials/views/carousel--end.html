@@ -33,10 +33,10 @@
   const indicators = [];
 
   function updateView() {
-    // translateX pour déplacer toute la bande
+    // translateX pour déplacer toute la bande (adapte si tu utilises le fix pixels)
     track.style.transform = `translateX(-${current * 100}%)`;
 
-    // slide active pour l'effet de scale / opacity
+    // slide active pour l'effet visuel
     slides.forEach((slide, index) => {
       slide.classList.toggle('active', index === current);
     });
@@ -61,13 +61,11 @@
     slide.style.cursor = 'pointer';
 
     slide.addEventListener('click', (e) => {
-      // Optionnel : si on clique sur un lien à l'intérieur, on laisse le lien faire sa vie
+      // si on clique sur un lien à l'intérieur, on laisse le lien faire sa vie
       if (e.target.closest('a')) return;
-
       goTo(index);
     });
   });
-
 
   function goTo(index) {
     const len = slides.length;
@@ -115,7 +113,43 @@
     }
   }, { passive: true });
 
-  // Init
+    // ----- LOGIQUE DES LIKE (CŒURS) -----
+  // const likeButtons = root.querySelectorAll('.js-like-btn');
+  // console.log('Like buttons trouvés dans ce carousel :', likeButtons.length);
+
+  // likeButtons.forEach(btn => {
+  //   const id = btn.getAttribute('data-like-id');
+  //   if (!id) return;
+
+  //   const outline = btn.querySelector('.heart-outline');
+  //   const solid = btn.querySelector('.heart-solid');
+  //   if (!outline || !solid) return;
+
+  //   const storageKey = 'liked_' + id;
+
+  //   function applyLikedState(isLiked) {
+  //     if (isLiked) {
+  //       outline.classList.add('hidden');
+  //       solid.classList.remove('hidden');
+  //     } else {
+  //       outline.classList.remove('hidden');
+  //       solid.classList.add('hidden');
+  //     }
+  //   }
+
+  //   // état initial depuis localStorage
+  //   const liked = localStorage.getItem(storageKey) === '1';
+  //   applyLikedState(liked);
+
+  //   btn.addEventListener('click', () => {
+  //     console.log('click sur cœur', id);
+  //     const isLikedNow = solid.classList.contains('hidden'); // si solide caché → on like
+  //     applyLikedState(isLikedNow);
+  //     localStorage.setItem(storageKey, isLikedNow ? '1' : '0');
+  //   });
+  // });
+
+  // Init carousel
   updateView();
   resetAuto();
 })();
