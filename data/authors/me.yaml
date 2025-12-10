@@ -48,6 +48,7 @@ interests:
 education:
   - degree: PhD Student in Computer Science
     institution: Toulouse University
+    institution_url: https://www.univ-tlse3.fr/
     logo: "logos/ut.png"
     start: 2025-09-01
     end: 2028-08-31
@@ -59,11 +60,14 @@ education:
       icon: hero/arrow-down-tray
   - degree: MS Computer Science
     institution: National Advanced School of Engineering of Yaounde
+    institution_url: https://polytechnique.cm/
     logo: "logos/enspy_no.png"
     start: 2019-09-01
-    end: 2025-09-17
+    end: 2024-09-17
   - degree: Scientific Baccalaureate
     institution: Classical High School of Bafoussam
+    institution_url: https://sat-educationonline.com/satonlineweb/admin/accueil/index.php?idecole=19
+    logo: "logos/lycla-circle.png"
     start: 2018-09-01
     end: 2019-05-31
 

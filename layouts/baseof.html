@@ -44,14 +44,13 @@
     <script>
       (function() {
         const likeButtons = document.querySelectorAll('.js-like-btn');
-        console.log('Total des boutons like trouvés :', likeButtons.length);
 
         likeButtons.forEach(btn => {
           const id = btn.getAttribute('data-like-id');
           if (!id) return;
 
           const outline = btn.querySelector('.heart-outline');
-          const solid = btn.querySelector('.heart-solid');
+          const solid   = btn.querySelector('.heart-solid');
           if (!outline || !solid) return;
 
           const storageKey = 'liked_' + id;
@@ -70,15 +69,23 @@
             }
           }
 
-          // État initial depuis localStorage
+          // état initial
           const liked = localStorage.getItem(storageKey) === '1';
           applyLikedState(liked);
 
-          // Toggle au clic
+          // clic
           btn.addEventListener('click', () => {
-            const isLikedNow = solid.classList.contains('hidden');
+            const isLikedNow = solid.classList.contains('hidden'); // on va passer à "like" ?
             applyLikedState(isLikedNow);
             localStorage.setItem(storageKey, isLikedNow ? '1' : '0');
+
+            // si on LIKE -> lancer / relancer l’animation
+            if (isLikedNow) {
+              // reset de l'animation
+              btn.classList.remove('like-animate');
+              void btn.offsetWidth; // force un reflow, indispensable pour rejouer l'anim
+              btn.classList.add('like-animate');
+            }
           });
         });
       })();

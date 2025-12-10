@@ -148,30 +148,104 @@
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+/* ------------------------------
+   BASE
+------------------------------ */
 .js-like-btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    /* color: #6b7280; */
-    transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: visible;
+  transition: color 0.2s ease;
 }
 
 .js-like-btn:hover {
-    color: #ef4444; /* red-500 */
+  color: #ef4444;
 }
 
 .heart-solid {
   transform-origin: center;
 }
 
+/* Petite anim quand le cœur apparaît normalement */
 .heart-solid:not(.hidden) {
-  animation: heart-pop 0.18s ease-out;
+  animation: heart-pop-small 0.18s ease-out;
 }
 
-@keyframes heart-pop {
+@keyframes heart-pop-small {
   0%   { transform: scale(0.7); }
   100% { transform: scale(1); }
 }
+
+/* -----------------------------------
+   ANIMATION SPÉCIALE LIKE ("POP XXL")
+----------------------------------- */
+.js-like-btn.like-animate .heart-solid {
+  animation: heart-pop-big 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes heart-pop-big {
+  0%   { transform: scale(0.6); }
+  40%  { transform: scale(1.5); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+/* -----------------------------------
+   HALO EXPLOSIF
+----------------------------------- */
+.js-like-btn.like-animate::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 9999px;
+  border: 2px solid rgba(239, 68, 68, 0.7);
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+  animation: like-halo 0.45s ease-out forwards;
+}
+
+@keyframes like-halo {
+  0%   { opacity: 0.7; transform: scale(0.4); }
+  70%  { opacity: 0;   transform: scale(1.6); }
+  100% { opacity: 0;   transform: scale(1.9); }
+}
+
+/* -----------------------------------
+   CONFETTIS
+----------------------------------- */
+.js-like-btn.like-animate::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+
+  /* 6 confettis autour du coeur */
+  box-shadow:
+    0 -20px 0 0 rgba(239,68,68,0.9),
+    16px -10px 0 0 rgba(251,191,36,0.9),
+    20px 6px 0 0 rgba(52,211,153,0.9),
+    0 20px 0 0 rgba(59,130,246,0.9),
+    -16px 6px 0 0 rgba(236,72,153,0.9),
+    -20px -10px 0 0 rgba(248,113,113,0.9);
+
+  animation: like-confetti 0.45s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes like-confetti {
+  0%   { opacity: 1; transform: translate(-50%, -50%) scale(0.3); }
+  70%  { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.3); }
+}
+
 
 
 
