@@ -59,6 +59,13 @@ slides: ""
 projects:
   - example
 ---
+
+Data centers are today at the heart of all computing, from providing the computing power that supports machine learning, databases, video streaming, etc., down to providing tiny sensors with extra computing power and storage.  By centralizing computing, data centers have the potential to deliver massive computing resources while adapting the resource consumption efficiently to changing needs.  Nevertheless, data centers have not fully realized their potential of optimizing large-scale computing usage. Instead, studies have consistently shown that, even though new data centers continue to be built, existing data centers are massively underused, typically reaching a usage ratio of only 50%.
+
+The essential problem of managing a data center is to allocate hardware resources, in an environment in which application requirements are not known a priori and are constantly changing, and where at the same time hardware capabilities are regularly evolving.  The Defi OS will attack the problem of data center underusage at the operating system level and hypervisor level, as these are the software components that interact directly with the hardware.  The Defi brings together researchers from the Whisper, WIDE, Erods (UGA), and Benagil teams and will investigate how virtual machine migration, heterogeneous architectures, rack scale computing, and custom resource management policies can be harnessed to raise the data center usage ratio toward 90%.
+
+> [!NOTE]
+> Text adapted from the [Défi OS project page](https://project.inria.fr/defios/).
 <!-- 
 > [!NOTE]
 > Click on the **Slides** button above to download the built-in slides.
@@ -70,8 +77,3 @@ Slides of the Talk Presented at INRIA : -->
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://docs.hugoblox.com/reference/markdown/).
 
 Further event details, including [page elements](https://docs.hugoblox.com/reference/markdown/) such as image galleries, can be added to the body of this page. -->
-
-
-
-
-

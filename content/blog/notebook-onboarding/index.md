@@ -1,7 +1,7 @@
 ---
 title: ⚡️ Turn Jupyter Notebooks into Blog Posts
 summary: Publish your data science and research directly from Jupyter Notebooks. No screenshots required.
-date: 2024-07-15
+date: 2028-07-15
 authors:
   - me
 tags:

@@ -1,7 +1,7 @@
 ---
 title: "MLNS2 : Machine Learning Network Systems Security"
 
-event: MLNS2
+event: Workshop MLNS2
 event_url: https://mlns2.org/
 
 # location: Campus Pierre and Marie Curie, Sorbonne University
@@ -18,9 +18,9 @@ abstract: 'IO_URING based approach for double paging problem'
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
-date: '2026-02-16T09:00:00Z'
-# date_end: '2024-11-25T17:00:00Z'
-all_day: true
+date: '2026-02-15T09:00:00Z'
+date_end: '2026-02-19T16:00:00Z'
+# all_day: true
 
 # Schedule page publish date (NOT talk date).
 publishDate: '2026-02-16T00:00:00Z'
@@ -61,6 +61,9 @@ projects:
   - example
 ---
 
+Machine Learning, Network, System and Security ([MLNS²](https://mlns2.org/))
+
+The [MLNS²](https://mlns2.org/) project aims to design and investigate efficient, robust, and scalable approaches to fight against malware proliferation. Addressing such challenges requires multidisciplinary knowledge from Machine Learning, Networking, System security, and beyond. 
 
 Slides from the MLNS2 Presentation:
 
