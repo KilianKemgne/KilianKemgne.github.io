@@ -15,6 +15,7 @@ sections:
     id: courses
     content:
       title: Courses
+      text: Upcomming soon, stay tuned ...
       filters:
         tag: Course
         kinds:
@@ -24,5 +25,5 @@ sections:
       show_read_time: false
       show_date: false
       show_read_more: false
-      columns: 1
+      columns: 2
 ---
